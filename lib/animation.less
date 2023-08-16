@@ -1,0 +1,366 @@
+:root {
+  --ac-animation-duration: 0.2s;
+  --ac-animation-timing-enter: ease-in;
+  --ac-animation-timing-leave: ease-out;
+
+  --ac-animation-timing-fade-out: cubic-bezier(0.175, 0.82, 0.265, 1);
+}
+
+// &-leave-active 未为 Vue 兼容
+
+@keyframes ac-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ac-rotate {
+  animation: ac-rotate 1s infinite linear;
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes ac-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.ac-slide-up {
+  &-enter-active {
+    animation: var(--ac-animation-duration) ac-slide-up-enter both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: var(--ac-animation-duration) ac-slide-up-leave both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes ac-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.ac-slide-down {
+  &-enter-active {
+    animation: ac-slide-down-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-slide-down-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ac-slide-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ac-slide-left {
+  &-enter-active {
+    animation: ac-slide-left-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-slide-left-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes ac-slide-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.ac-slide-right {
+  &-enter-active {
+    animation: ac-slide-right-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-slide-right-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ac-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ac-fade {
+  &-enter-active {
+    animation: var(--ac-animation-duration) ac-fade-in both var(--ac-animation-timing-enter);
+  }
+  &-exit-active,
+  &-leave-active {
+    animation: var(--ac-animation-duration) ac-fade-out both var(--ac-animation-timing-leave);
+  }
+}
+
+@keyframes ac-zoom-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ac-zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.ac-zoom {
+  &-enter-active {
+    animation: var(--ac-animation-duration) ac-zoom-in both var(--ac-animation-timing-enter);
+  }
+  &-exit-active,
+  &-leave-active {
+    animation: var(--ac-animation-duration) ac-zoom-out both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-move-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(-12px, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ac-move-leave {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-12px, -12px, 0);
+  }
+}
+
+.ac-move {
+  &-enter-active {
+    animation: ac-move-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-move-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-move-top-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ac-move-top-leave {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+.ac-move-top {
+  &-enter-active {
+    animation: ac-move-top-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-move-top-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-move-bottom-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ac-move-bottom-leave {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+}
+
+.ac-move-bottom {
+  &-enter-active {
+    animation: ac-move-bottom-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-move-bottom-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-move-left-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(-12px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ac-move-left-leave {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-12px, 0, 0);
+  }
+}
+
+.ac-move-left {
+  &-enter-active {
+    animation: ac-move-left-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-move-left-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+@keyframes ac-move-right-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(12px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ac-move-right-leave {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(12px, 0, 0);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+
+.ac-move-right {
+  &-enter-active {
+    animation: ac-move-right-enter var(--ac-animation-duration) both var(--ac-animation-timing-enter);
+  }
+
+  &-exit-active,
+  &-leave-active {
+    animation: ac-move-right-leave var(--ac-animation-duration) both var(--ac-animation-timing-leave);
+  }
+}

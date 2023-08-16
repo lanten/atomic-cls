@@ -1,0 +1,112 @@
+.full-screen {
+  height: 100%;
+}
+
+.full-screen-min {
+  min-height: 100%;
+}
+
+.full-screen-vh {
+  height: 100vh;
+}
+
+.full-screen-vh-min,
+.full-screen-min-vh {
+  min-height: 100vh;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.ovh {
+  overflow: hidden;
+}
+
+.ovh-y {
+  overflow-y: hidden;
+}
+
+.ovh-x {
+  overflow-x: hidden;
+}
+
+.ova {
+  overflow: auto;
+}
+
+.ova-y {
+  overflow-y: auto;
+}
+
+.ova-x {
+  overflow-x: auto;
+}
+
+.ovv {
+  overflow: visible;
+}
+
+.ovv-y {
+  overflow-y: visible;
+}
+
+.ovv-x {
+  overflow-x: visible;
+}
+
+.container-layout {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ac-padding-md);
+  padding-right: var(--ac-padding-md);
+
+  .loopMaxWidth(@i) when (@i >= 0) {
+    @ix100: @i*100;
+    &.max-@{ix100} {
+      max-width: @ix100 * 1px;
+    }
+    .loopMaxWidth(@i - 1);
+  }
+  .loopMaxWidth(20);
+
+  &.max-2048 {
+    max-width: 2048px;
+  }
+
+  &.max-1920 {
+    max-width: 1920px;
+  }
+
+  &.max-1680 {
+    max-width: 1680px;
+  }
+
+  &.max-1280 {
+    max-width: 1280px;
+  }
+
+  &.max-1080 {
+    max-width: 1080px;
+  }
+}
+
+// ios 顶部安全区域
+.safe-area-top {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+// ios 底部安全区域
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
