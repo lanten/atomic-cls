@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-5e46c177","path":"/guide/css-vars.html","title":"CSS 变量","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1717845019000,"contributors":[{"name":"lanten","email":"lanten233@qq.com","commits":1}]},"filePathRelative":"guide/css-vars.md"}');export{e as data};
