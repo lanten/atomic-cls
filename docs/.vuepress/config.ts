@@ -10,7 +10,7 @@ console.log(__dirname)
 console.log(rootPath)
 
 export default defineUserConfig({
-  base: '/',
+  base: '/atomic-cls/',
   lang: 'zh-CN',
   locales: {
     '/': {
@@ -71,10 +71,10 @@ export default defineUserConfig({
             text: '代码仓库',
             link: 'https://github.com/lanten/atomic-cls',
           },
-          // {
-          //   text: 'npm',
-          //   link: 'https://www.npmjs.com/package/???',
-          // },
+          {
+            text: 'npm',
+            link: 'https://www.npmjs.com/package/atomic-cls',
+          },
         ],
       },
     ],
