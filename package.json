@@ -22,7 +22,7 @@
     "pu": "npm run build && npm publish",
     "dev": "vuepress dev docs",
     "build": "node ./scripts/rm-dist.js && vite build",
-    "build:doc": "vuepress build docs"
+    "build:docs": "vuepress build docs"
   },
   "devDependencies": {
     "@vuepress/plugin-search": "2.0.0-beta.60",
