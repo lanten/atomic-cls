@@ -5,6 +5,10 @@ import packageJson from '../../package.json'
 
 const rootPath = process.cwd()
 
+console.log(__dirname)
+
+console.log(rootPath)
+
 export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
@@ -17,7 +21,7 @@ export default defineUserConfig({
   description: 'Atomic Css Docs',
 
   theme: defaultTheme({
-    repo: 'https://shebaochina.coding.net/p/packages/d/atomic-css/git',
+    repo: 'https://github.com/lanten/atomic-cls',
     logo: '/images/vite.svg',
     docsBranch: 'master',
     editLink: true,
@@ -44,6 +48,7 @@ export default defineUserConfig({
         children: [
           '/documents/color.md',
           '/documents/flex.md',
+          '/documents/grid.md',
           '/documents/box-model.md',
           '/documents/border.md',
           '/documents/text.md',
@@ -64,7 +69,7 @@ export default defineUserConfig({
         children: [
           {
             text: '代码仓库',
-            link: 'https://shebaochina.coding.net/p/packages/d/atomic-css/git',
+            link: 'https://github.com/lanten/atomic-cls',
           },
           // {
           //   text: 'npm',

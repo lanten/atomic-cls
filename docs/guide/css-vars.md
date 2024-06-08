@@ -11,7 +11,7 @@
 | --ac-color-yellow           | <span class="color-yellow">#ff9900</span>                |
 | --ac-color-red              | <span class="color-red">#ff5257</span>                   |
 | --ac-color-white            | white                                                    |
-| --ac-color-primary          | <span class="color-primary">#f37327</span>               |
+| --ac-color-primary          | <span class="color-primary">#a2c339</span>               |
 | --ac-color-info             | <span class="color-info">var(--ac-color-blue)</span>     |
 | --ac-color-success          | <span class="color-success">var(--ac-color-green)</span> |
 | --ac-color-warn             | <span class="color-warn">var(--ac-color-yellow)</span>   |

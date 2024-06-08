@@ -1,0 +1,51 @@
+.grid {
+  --gcw: 1fr;
+  --gc: auto-fill;
+
+  display: grid;
+  grid-template-columns: repeat(var(--gc), var(--gcw));
+
+  // col-{1-24}
+  .gridCol(@i) when (@i > 0) {
+    &.col-@{i} {
+      --gc: @i;
+    }
+    .gridCol(@i - 1);
+  }
+  .gridCol(24);
+
+  // col-auto-{10-500} 10的整数倍，单位px
+  .gridAutoCol(@i) when (@i > 0) {
+    @w:@i * 10;
+    &.col-auto-@{w} {
+      @wpx:@w * 1px;
+      --gcw: minmax(@wpx, 1fr);
+    }
+    .gridAutoCol(@i - 1);
+  }
+  .gridAutoCol(50);
+
+  &.center {
+    place-items: center;
+  }
+
+  &.center-v {
+    align-items: center;
+  }
+
+  &.center-h {
+    justify-items: center;
+  }
+
+  & > .center {
+    place-self: center;
+  }
+
+  & > .center-v {
+    align-self: center;
+  }
+
+  & > .center-h {
+    justify-self: center;
+  }
+}

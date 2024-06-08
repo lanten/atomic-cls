@@ -2,7 +2,7 @@
   import '@/lib'
 </script>
 
-# Border
+# Border <Badge text="组合" title="该选择器需要组合使用" />
 
 ## 圆角
 
@@ -60,6 +60,7 @@ br-`num` (0-24)
   <div class="p-4 border rect-1 hide">hide</div>
   <div class="p-4 border rect-1 hide-last">hide-last</div>
   <div class="p-4 border rect-1 hide-last">hide-last</div>
+  <div class="p-4 border rect-1 dashed">hide-last</div>
 </div>
 ```
 
@@ -76,6 +77,7 @@ br-`num` (0-24)
   <div class="p-4 border rect-1 hide">hide</div>
   <div class="p-4 border rect-1 hide-last">hide-last</div>
   <div class="p-4 border rect-1 hide-last">hide-last</div>
+  <div class="p-4 border rect-1 dashed">hide-last</div>
 </div>
 
 ### 对照表
@@ -92,6 +94,31 @@ br-`num` (0-24)
 | &.hide-first   | 隐藏同级第一个元素的边框            | 0                            | .border  |
 | &.hide-last    | 隐藏同级最后一个元素的边框          | 0                            | .border  |
 | &.split        | 分割线，颜色要浅一点                | var(--ac-color-border-split) | .border  |
+
+## 边框样式
+
+```html
+<div class="flex row gap-8">
+  <div class="p-4 border rect-1">default</div>
+  <div class="p-4 border rect-1 dashed">dashed</div>
+  <div class="p-4 border rect-1 dotted">dotted</div>
+</div>
+```
+
+效果如下：
+
+<div class="flex row gap-8">
+  <div class="p-4 border rect-1">default</div>
+  <div class="p-4 border rect-1 dashed">dashed</div>
+  <div class="p-4 border rect-1 dotted">dotted</div>
+</div>
+
+### 对照表
+
+| 类名   | 描述     | 值                   | 依赖类名 |
+| ------ | -------- | -------------------- | -------- |
+| dashed | 虚线边框 | border-style: dashed | .border  |
+| dotted | 点线边框 | order-style: dotted  | .border  |
 
 ## 边框颜色
 

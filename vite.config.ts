@@ -1,6 +1,12 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': process.cwd(),
+    },
+  },
+
   css: {
     devSourcemap: true,
     preprocessorOptions: {
@@ -12,9 +18,10 @@ export default defineConfig({
 
   build: {
     lib: {
-      entry: './lib/index.ts',
-      name: 'atomicCss',
-      fileName: 'index',
+      name: 'atomic-cls',
+      entry: './lib/style.ts',
+      formats: ['es', 'cjs'],
+      fileName: 'style',
     },
   },
 })
