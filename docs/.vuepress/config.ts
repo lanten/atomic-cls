@@ -55,7 +55,7 @@ export default defineUserConfig({
           '/documents/layout.md',
           '/documents/cursor.md',
           '/documents/shadow.md',
-          '/documents/animation.md',
+          // '/documents/animation.md',
         ],
       },
 
