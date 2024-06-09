@@ -42,6 +42,9 @@ jobs:
       - name: Run build
         run: npm run build:docs
 
+      - name: Generate CNAME file
+        run: echo 'cls.taomu.org' > ./docs/.vuepress/dist/CNAME
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         # If you're changing the branch from main,
