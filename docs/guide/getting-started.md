@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-npm i atomic-css
+npm i atomic-cls
 ```
 
 ## 引用
@@ -13,13 +13,13 @@ npm i atomic-css
 在 js 入口引入
 
 ```js
-import 'atomic-css'
+import 'atomic-cls'
 ```
 
 在 css 入口引入
 
 ```css
-@import 'atomic-css/style.css';
+@import 'atomic-cls/style.css';
 ```
 
 ---
