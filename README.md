@@ -1,4 +1,4 @@
-# atomic-css
+# atomic-cls
 
 [documents](docs/README.md)
 
