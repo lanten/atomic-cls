@@ -51,15 +51,15 @@
 <div class="flex row gap-sm mt-md">
   <div class="p-8 bg-primary">bg-primary</div>
   <div class="p-8 bg-success">bg-success</div>
-  <div class="p-8 bg-warn">bg-warn</div>
-  <div class="p-8 bg-error">bg-error</div>
+  <div class="p-8 bgc-warn">bg-warn</div>
+  <div class="p-8 bgc-error">bg-error</div>
 </div>
 
 ## 通用颜色名称
 
 ```less
-@colors: transparent, white, primary, info, success, warn, error, blue, green, yellow, red, title, default, gray, light,
-  disabled, background;
+@colors: transparent, white, primary, info, success, warn, error, blue, green, yellow, red, title, default, gray, light, disabled,
+  background;
 ```
 
 - `blue` 对应变量 `--ac-color-blue`
@@ -86,7 +86,8 @@
 | 类名         | 描述                    | 值     | 依赖类名 |
 | ------------ | ----------------------- | ------ | -------- |
 | color-`name` | color:`name`            | `name` | -        |
-| bg-`name`    | background-color:`name` | `name` | -        |
+| bg-`name`    | background:`name`       | `name` | -        |
+| bgx-`name`   | background-color:`name` | `name` | -        |
 
 ## 其它颜色
 
