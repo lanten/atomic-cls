@@ -11,7 +11,7 @@ console.log(__dirname)
 console.log(rootPath)
 
 export default defineUserConfig({
-  base: '/',
+  base: '/atomic-cls/',
   lang: 'zh-CN',
   locales: {
     '/': {
