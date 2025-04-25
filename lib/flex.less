@@ -1,3 +1,5 @@
+@import './less-vars.less';
+
 .flex {
   display: flex;
 
@@ -9,7 +11,8 @@
     flex-direction: row;
   }
 
-  &.column, &.col {
+  &.column,
+  &.col {
     flex-direction: column;
   }
 
@@ -56,41 +59,51 @@
   .flex-@{i} {
     flex: @i;
   }
+
   .loopFlex(@i - 1);
 }
+
 .loopFlex(12);
 
 // gap-{0-48} 2 的整数倍
-.loopGap(@i) when (@i >= 0) {
+.loopGap(@i) when (@i >=0) {
   .gap-@{i} {
-    gap: ~'@{i}px';
+    gap:~'@{i}px';
   }
-  .gap-h-@{i}{
-    row-gap:  ~'@{i}px';
-   }
-   .gap-v-@{i}{
-    column-gap:  ~'@{i}px';
-   }
+
+  .gap-h-@{i} {
+    row-gap:~'@{i}px';
+  }
+
+  .gap-v-@{i} {
+    column-gap:~'@{i}px';
+  }
+
   .loopGap(@i - 2);
 }
+
 .loopGap(48);
 
 // xs, sm, md, lg, xl
 .loopSizes-gap(@i) when (@i > 0) {
   @name: extract(@size_names, @i);
-  @pv:'p_@{name}';
+  @pv: 'p_@{name}';
 
-  .gap-@{name}{
+  .gap-@{name} {
     gap: @@pv;
   }
-  .gap-h-@{name}{
-   row-gap: @@pv;
+
+  .gap-h-@{name} {
+    row-gap: @@pv;
   }
-  .gap-v-@{name}{
-   column-gap: @@pv;
+
+  .gap-v-@{name} {
+    column-gap: @@pv;
   }
+
   .loopSizes-gap((@i - 1));
 }
+
 .loopSizes-gap(length(@size_names));
 
 .flex-none {
