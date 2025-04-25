@@ -1,21 +1,29 @@
 {
   "name": "atomic-cls",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "type": "module",
   "main": "./index.cjs",
   "module": "./index.js",
   "types": "./types/index.d.ts",
   "exports": {
-    "types": "./types/index.d.ts",
-    "import": "./index.js",
-    "require": "./index.cjs"
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./stringify/*": {
+      "types": "./types/stringify.d.ts",
+      "import": "./stringify/*",
+      "require": "./stringify/*"
+    }
   },
   "files": [
     "README.md",
     "types",
     "dist",
     "lib",
+    "stringify",
     "index.js",
     "index.cjs"
   ],
@@ -26,11 +34,14 @@
     "build:docs": "vuepress build docs"
   },
   "devDependencies": {
-    "@vuepress/plugin-search": "2.0.0-beta.60",
-    "less": "^4.2.0",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.13",
-    "vuepress": "2.0.0-beta.60"
+    "@types/less": "^3.0.8",
+    "@vuepress/bundler-vite": "^2.0.0-rc.21",
+    "@vuepress/theme-default": "^2.0.0-rc.96",
+    "less": "^4.3.0",
+    "sass-embedded": "^1.87.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vuepress": "^2.0.0-rc.21"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

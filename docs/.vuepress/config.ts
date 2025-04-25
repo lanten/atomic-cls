@@ -1,5 +1,6 @@
-import { defineUserConfig, viteBundler, defaultTheme } from 'vuepress'
-import { searchPlugin } from '@vuepress/plugin-search'
+import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
 
 import packageJson from '../../package.json'
 
@@ -26,6 +27,9 @@ export default defineUserConfig({
     docsBranch: 'master',
     editLink: true,
     editLinkPattern: ':repo/tree/:branch/docs/:path',
+    colorModeSwitch: false,
+    colorMode: 'light',
+
     navbar: [
       {
         text: `v${packageJson.version}`,
@@ -80,11 +84,7 @@ export default defineUserConfig({
     ],
   }),
 
-  plugins: [
-    searchPlugin({
-      // 配置项
-    }),
-  ],
+  plugins: [],
 
   bundler: viteBundler({
     viteOptions: {
