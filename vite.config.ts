@@ -46,7 +46,6 @@ export default defineConfig({
         path.join(srcPath, 'font.less'),
         path.join(srcPath, 'grid.less'),
         path.join(srcPath, 'layout.less'),
-        path.join(srcPath, 'less-vars.less'),
         path.join(srcPath, 'shadow.less'),
       ],
       outputDir: jsStringPath,

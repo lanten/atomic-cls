@@ -14,8 +14,11 @@ export interface Less2cssStrOptions {
 }
 
 async function compileSingleLess(fileName: string, outputFileName: string) {
-  const lessFilePath = path.resolve(process.cwd(), fileName)
-  const cssOutputPath = path.resolve(process.cwd(), outputFileName)
+  const lessFilePath = path.join(fileName)
+  const outBaseName = path.basename(outputFileName)
+  const outDirName = path.dirname(outputFileName)
+  const jsOutputPath = path.join(outDirName, outBaseName, 'index.js')
+  const cjsOutputPath = path.join(outDirName, outBaseName, 'index.cjs')
 
   // 读取 Less 文件内容
   const lessContent = fs.readFileSync(lessFilePath, 'utf-8')
@@ -28,11 +31,11 @@ async function compileSingleLess(fileName: string, outputFileName: string) {
   })
 
   // 确保输出目录存在
-  const outputDir = path.dirname(cssOutputPath)
+  const outputDir = path.dirname(jsOutputPath)
   fs.mkdirSync(outputDir, { recursive: true })
 
-  // 将 CSS 写入输出文件 - 注意：这里的文件路径应该是 cssOutputPath，而不是模板字符串
-  fs.writeFileSync(cssOutputPath, `export default \`${output.css}\``, 'utf-8') // 修正写入逻辑
+  fs.writeFileSync(jsOutputPath, `export default \`${output.css}\``, 'utf-8')
+  fs.writeFileSync(cjsOutputPath, `module.exports = \`${output.css}\``, 'utf-8')
 }
 
 export const less2JSStringCompiler = ({ input, outputDir }: Less2cssStrOptions): Plugin => {
@@ -56,11 +59,11 @@ export const less2JSStringCompiler = ({ input, outputDir }: Less2cssStrOptions):
             if (path.isAbsolute(inputConfig.fileName)) {
               outputFileName = inputConfig.output
             } else {
-              outputFileName = path.resolve(outputDir, inputConfig.output)
+              outputFileName = path.join(outputDir, inputConfig.output)
             }
           } else {
             const fileName = path.basename(inputConfig.fileName, '.less')
-            outputFileName = path.join(outputDir, `${fileName}.js`)
+            outputFileName = path.join(outputDir, fileName)
           }
 
           return compileSingleLess(inputConfig.fileName, outputFileName)

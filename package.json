@@ -1,6 +1,6 @@
 {
   "name": "atomic-cls",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "./index.cjs",
@@ -12,10 +12,15 @@
       "import": "./index.js",
       "require": "./index.cjs"
     },
+    "./stringify": {
+      "types": "./types/index.d.ts",
+      "import": "./stringify/index/index.js",
+      "require": "./stringify/index/index.cjs"
+    },
     "./stringify/*": {
-      "types": "./types/stringify.d.ts",
-      "import": "./stringify/*",
-      "require": "./stringify/*"
+      "types": "./types/index.d.ts",
+      "import": "./stringify/*/index.js",
+      "require": "./stringify/*/index.cjs"
     }
   },
   "files": [
@@ -41,6 +46,7 @@
     "sass-embedded": "^1.87.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
+    "vue": "^3.5.13",
     "vuepress": "^2.0.0-rc.21"
   },
   "publishConfig": {
